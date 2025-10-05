@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title><%= titulo %></title>
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+    <div class="container">
+    <h1><%= titulo %></h1>
+    </div>
+    
+    <a href="/">Volver a Inicio</a>
+    
+    <form action="/peliculas" method="POST">
+        <label for="titulo">Título:</label><br>
+        <input type="text" id="titulo" name="titulo" required><br><br>
+        
+        <label for="genero">Género:</label><br>
+        <input type="text" id="genero" name="genero"><br><br>
+        
+        <label for="duracion">Duración (min):</label><br>
+        <input type="number" id="duracion" name="duracion" required><br><br>
+        
+        <label for="clasificacion">Clasificación:</label><br>
+        <input type="text" id="clasificacion" name="clasificacion"><br><br>
+        
+        <input type="submit" value="Enviar Datos (POST)">
+    </form>
+</body>
+</html>

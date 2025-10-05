@@ -1,0 +1,139 @@
+/* public/css/style.css - Estilo Profesional Dark Mode */
+
+:root {
+    --color-fondo: #1c1c1c; /* Fondo muy oscuro */
+    --color-texto: #e0e0e0; /* Texto claro */
+    --color-acento: #e50914; /* Rojo de cine (Netflix/Streaming) */
+    --color-card: #2c2c2c; /* Fondo de contenedores */
+    --color-borde: #444;
+    --color-hover: #e50914e0; /* Rojo semitransparente para hover */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* --- Contenedor Principal --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    color: var(--color-acento);
+    border-bottom: 2px solid var(--color-borde);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+/* --- Botones y Enlaces --- */
+a {
+    color: var(--color-acento);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff3842;
+}
+
+/* --- Listas de Películas/Sesiones (Tarjetas) --- */
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+li {
+    background: var(--color-card);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s;
+}
+
+li:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Tablas (Para sesiones recientes) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--color-card);
+    border-radius: 8px;
+    overflow: hidden; /* Para bordes redondeados */
+}
+
+th, td {
+    border: 1px solid var(--color-borde);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: var(--color-acento);
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+/* --- Formularios --- */
+form {
+    background: var(--color-card);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    background: #3a3a3a; /* Campo más oscuro */
+    color: var(--color-texto);
+}
+
+input[type="submit"] {
+    background-color: var(--color-acento);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--color-hover);
+}
+
+/* --- Estilos específicos de Detalle --- */
+.detalle p {
+    background: var(--color-card);
+    padding: 15px;
+    border-left: 5px solid var(--color-acento);
+    margin-bottom: 10px;
+    border-radius: 4px;
+}

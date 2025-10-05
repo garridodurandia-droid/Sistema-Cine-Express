@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title><%= titulo %></title>
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+    <div class="container">
+    <h1><%= titulo %></h1>
+    </div>
+    <a href="/">Volver a Inicio</a>
+    <table border="1">
+        <tr><th>ID Sesión</th><th>ID Película</th><th>ID Sala</th><th>Fecha</th><th>Hora</th><th>Precio</th></tr>
+        <% sesiones.forEach(function(sesion) { %>
+            <tr>
+                <td><%= sesion.id %></td>
+                <td><%= sesion.id_pelicula %></td>
+                <td><%= sesion.id_sala %></td>
+                <td><%= sesion.fecha %></td>
+                <td><%= sesion.horaInicio %></td>
+                <td>$<%= sesion.precio.toFixed(2) %></td>
+            </tr>
+        <% }); %>
+    </table>
+    
+</body>
+</html>

@@ -1,38 +1,69 @@
-/* public/css/style.css - Estilo Profesional Dark Mode */
+/* 🎬 public/css/style.css - Estilo Profesional CINEMA DARK MODE */
 
 :root {
-    --color-fondo: #1c1c1c; /* Fondo muy oscuro */
-    --color-texto: #e0e0e0; /* Texto claro */
-    --color-acento: #e50914; /* Rojo de cine (Netflix/Streaming) */
-    --color-card: #2c2c2c; /* Fondo de contenedores */
-    --color-borde: #444;
-    --color-hover: #e50914e0; /* Rojo semitransparente para hover */
+    /* Paleta de Colores de Cine */
+    --color-fondo: #0a0a0a; /* Fondo MUY oscuro, casi negro */
+    --color-texto: #f5f5f5; /* Texto blanco brillante */
+    --color-acento: #e50914; /* Rojo Cinematográfico (como Netflix) */
+    --color-card: #181818; /* Fondo de contenedores oscuro */
+    --color-borde: #333333; /* Líneas divisorias sutiles */
+    --color-hover: #ff3842; /* Rojo más brillante para hover */
+    --sombra-card: 0 8px 16px rgba(0, 0, 0, 0.6); /* Sombra intensa */
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif; /* Fuente moderna */
     background-color: var(--color-fondo);
     color: var(--color-texto);
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    /* Efecto de 'proyección' sutil */
+    /* text-shadow: 0 0 1px rgba(255, 255, 255, 0.1); */
 }
 
 /* --- Contenedor Principal --- */
 .container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 1300px; /* Un poco más ancho */
+    margin: 50px auto; /* Más espacio vertical */
+    padding: 0 30px;
 }
 
 h1, h2 {
     color: var(--color-acento);
-    border-bottom: 2px solid var(--color-borde);
-    padding-bottom: 10px;
-    margin-top: 30px;
+    /* Línea sutil debajo de los títulos */
+    border-bottom: 3px solid var(--color-acento); 
+    padding-bottom: 15px;
+    margin-top: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* --- Botones y Enlaces --- */
+/* --- Botón Principal de Navegación/Acción --- */
+
+/* Este estilo asume que tienes un enlace o botón con la clase .btn-primary para "Agregar Película" */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-acento);
+    color: white !important; /* Asegura el texto blanco */
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px; /* Separa del contenido */
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Enlaces Normales --- */
 a {
     color: var(--color-acento);
     text-decoration: none;
@@ -40,7 +71,7 @@ a {
 }
 
 a:hover {
-    color: #ff3842;
+    color: var(--color-hover);
 }
 
 /* --- Listas de Películas/Sesiones (Tarjetas) --- */
@@ -48,92 +79,137 @@ ul {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    /* Mejor distribución en pantallas grandes */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; /* Más espacio entre tarjetas */
 }
 
 li {
     background: var(--color-card);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    transition: transform 0.2s;
+    padding: 25px;
+    border-radius: 10px; /* Bordes más suaves */
+    box-shadow: var(--sombra-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-borde); /* Borde sutil */
 }
 
 li:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px); /* Efecto de elevación más notable */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
 }
 
 /* --- Tablas (Para sesiones recientes) --- */
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    border-collapse: separate; /* Permite border-radius en el contenedor */
+    border-spacing: 0;
+    margin-top: 25px;
     background: var(--color-card);
-    border-radius: 8px;
-    overflow: hidden; /* Para bordes redondeados */
+    border-radius: 10px;
+    overflow: hidden; 
+    box-shadow: var(--sombra-card);
 }
 
 th, td {
-    border: 1px solid var(--color-borde);
-    padding: 12px;
+    padding: 15px;
     text-align: left;
+    border-bottom: 1px solid var(--color-borde); /* Solo línea horizontal */
 }
 
 th {
-    background-color: #333;
-    color: var(--color-acento);
+    background-color: #222;
+    color: white; /* Texto blanco para el encabezado */
     text-transform: uppercase;
-    font-size: 0.9em;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
-/* --- Formularios --- */
+/* Eliminar la línea inferior de la última fila */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Formularios (Agregar Película) --- */
 form {
     background: var(--color-card);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--sombra-card);
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    margin-top: 20px;
+    max-width: 600px; /* Un poco más grande para el formulario */
+    margin-top: 25px;
+    border-top: 4px solid var(--color-acento); /* Barra de acento en la parte superior */
 }
 
 label {
-    margin-top: 15px;
-    font-weight: bold;
+    margin-top: 20px;
+    font-weight: 600;
+    color: var(--color-texto);
+    font-size: 1.1em;
 }
 
-input[type="text"], input[type="number"] {
-    padding: 10px;
-    margin-top: 5px;
+input[type="text"], input[type="number"], textarea {
+    padding: 12px;
+    margin-top: 8px;
     border: 1px solid var(--color-borde);
-    border-radius: 4px;
-    background: #3a3a3a; /* Campo más oscuro */
+    border-radius: 6px;
+    background: #282828; /* Campo más oscuro que el fondo del form */
     color: var(--color-texto);
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+    border-color: var(--color-acento); /* Borde rojo al enfocar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(229, 9, 20, 0.5);
 }
 
 input[type="submit"] {
+    /* Usamos el mismo estilo que el botón principal para consistencia */
     background-color: var(--color-acento);
     color: white;
-    padding: 12px 20px;
+    padding: 14px 25px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 30px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 input[type="submit"]:hover {
     background-color: var(--color-hover);
+    transform: translateY(-1px);
 }
 
 /* --- Estilos específicos de Detalle --- */
 .detalle p {
     background: var(--color-card);
-    padding: 15px;
-    border-left: 5px solid var(--color-acento);
-    margin-bottom: 10px;
-    border-radius: 4px;
+    padding: 20px;
+    /* Detalle elegante con borde izquierdo */
+    border-left: 6px solid var(--color-acento); 
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 📱 Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    ul {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+
+    form {
+        padding: 25px;
+    }
 }

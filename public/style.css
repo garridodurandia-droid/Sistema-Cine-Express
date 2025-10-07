@@ -1,77 +1,75 @@
-/* 🎬 public/css/style.css - Estilo Profesional CINEMA DARK MODE */
+/* 🎬 public/css/style.css - Estilo Profesional AZUL MEDIANOCHE (Dark Mode) */
 
 :root {
-    /* Paleta de Colores de Cine */
-    --color-fondo: #0a0a0a; /* Fondo MUY oscuro, casi negro */
-    --color-texto: #f5f5f5; /* Texto blanco brillante */
-    --color-acento: #e50914; /* Rojo Cinematográfico (como Netflix) */
-    --color-card: #181818; /* Fondo de contenedores oscuro */
-    --color-borde: #333333; /* Líneas divisorias sutiles */
-    --color-hover: #ff3842; /* Rojo más brillante para hover */
-    --sombra-card: 0 8px 16px rgba(0, 0, 0, 0.6); /* Sombra intensa */
+    /* Paleta de Colores de Cine - Modo Azul Oscuro */
+    --color-fondo: #1a2940; /* Azul Medianoche Oscuro (Fondo principal) */
+    --color-texto: #f0f8ff; /* Texto Blanco/Claro */
+    --color-acento: #4a90e2; /* Azul Eléctrico (Para títulos y enlaces) */
+    --color-acento-secundario: #e50914; /* Rojo Cinematográfico (Para acciones clave) */
+    --color-card: #283955; /* Fondo de contenedores (Azul oscuro ligeramente más claro) */
+    --color-borde: #3b5072; /* Líneas divisorias sutiles */
+    --color-hover-acento: #6fa8dc; /* Azul más claro para hover */
+    --color-hover-rojo: #ff3842;
+    --sombra-card: 0 6px 15px rgba(0, 0, 0, 0.5); /* Sombra oscura para contraste */
 }
 
 body {
-    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif; /* Fuente moderna */
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
     background-color: var(--color-fondo);
-    color: var(--color-texto);
+    color: var(--color-texto); /* Texto principal blanco */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    /* Efecto de 'proyección' sutil */
-    /* text-shadow: 0 0 1px rgba(255, 255, 255, 0.1); */
 }
 
 /* --- Contenedor Principal --- */
 .container {
-    max-width: 1300px; /* Un poco más ancho */
-    margin: 50px auto; /* Más espacio vertical */
-    padding: 0 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 25px;
 }
 
 h1, h2 {
-    color: var(--color-acento);
-    /* Línea sutil debajo de los títulos */
-    border-bottom: 3px solid var(--color-acento); 
+    color: var(--color-acento); /* Títulos en azul brillante */
+    /* Línea de acento moderna debajo de los títulos */
+    border-bottom: 2px solid var(--color-borde); 
     padding-bottom: 15px;
     margin-top: 40px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-/* --- Botón Principal de Navegación/Acción --- */
-
-/* Este estilo asume que tienes un enlace o botón con la clase .btn-primary para "Agregar Película" */
+/* --- Botón Principal de Navegación/Acción (Agregar Película) --- */
 .btn-primary {
     display: inline-block;
-    background-color: var(--color-acento);
-    color: white !important; /* Asegura el texto blanco */
+    background-color: var(--color-acento-secundario); /* Rojo para la acción principal */
+    color: white !important;
     padding: 12px 25px;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 30px; /* Separa del contenido */
+    letter-spacing: 1px;
+    margin-bottom: 30px; 
     transition: background-color 0.3s, transform 0.1s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(229, 9, 20, 0.4); 
 }
 
 .btn-primary:hover {
-    background-color: var(--color-hover);
+    background-color: var(--color-hover-rojo);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 15px rgba(229, 9, 20, 0.6);
 }
 
 /* --- Enlaces Normales --- */
 a {
-    color: var(--color-acento);
+    color: var(--color-acento); /* Enlaces en azul brillante */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: var(--color-hover);
+    color: var(--color-hover-acento);
 }
 
 /* --- Listas de Películas/Sesiones (Tarjetas) --- */
@@ -79,33 +77,31 @@ ul {
     list-style: none;
     padding: 0;
     display: grid;
-    /* Mejor distribución en pantallas grandes */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 30px; /* Más espacio entre tarjetas */
+    gap: 25px;
 }
 
 li {
-    background: var(--color-card);
-    padding: 25px;
-    border-radius: 10px; /* Bordes más suaves */
+    background: var(--color-card); /* Fondo de tarjeta azul oscuro */
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: var(--sombra-card);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--color-borde); /* Borde sutil */
+    border: 1px solid var(--color-borde);
 }
 
 li:hover {
-    transform: translateY(-8px); /* Efecto de elevación más notable */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
 }
 
 /* --- Tablas (Para sesiones recientes) --- */
 table {
     width: 100%;
-    border-collapse: separate; /* Permite border-radius en el contenedor */
-    border-spacing: 0;
+    border-collapse: collapse;
     margin-top: 25px;
     background: var(--color-card);
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden; 
     box-shadow: var(--sombra-card);
 }
@@ -113,19 +109,18 @@ table {
 th, td {
     padding: 15px;
     text-align: left;
-    border-bottom: 1px solid var(--color-borde); /* Solo línea horizontal */
+    border-bottom: 1px solid var(--color-borde);
 }
 
 th {
-    background-color: #222;
-    color: white; /* Texto blanco para el encabezado */
+    background-color: var(--color-acento); /* Encabezado de tabla en azul principal */
+    color: white;
     text-transform: uppercase;
-    font-size: 0.85em;
-    letter-spacing: 0.5px;
-    font-weight: 600;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
-/* Eliminar la línea inferior de la última fila */
 tr:last-child td {
     border-bottom: none;
 }
@@ -133,43 +128,42 @@ tr:last-child td {
 /* --- Formularios (Agregar Película) --- */
 form {
     background: var(--color-card);
-    padding: 40px;
+    padding: 35px;
     border-radius: 10px;
     box-shadow: var(--sombra-card);
     display: flex;
     flex-direction: column;
-    max-width: 600px; /* Un poco más grande para el formulario */
+    max-width: 550px;
     margin-top: 25px;
-    border-top: 4px solid var(--color-acento); /* Barra de acento en la parte superior */
+    border-left: 5px solid var(--color-acento-secundario); /* Barra de acento lateral en ROJO */
 }
 
 label {
-    margin-top: 20px;
-    font-weight: 600;
-    color: var(--color-texto);
-    font-size: 1.1em;
+    margin-top: 15px;
+    font-weight: 500;
+    color: var(--color-texto); 
+    font-size: 1em;
 }
 
 input[type="text"], input[type="number"], textarea {
     padding: 12px;
-    margin-top: 8px;
+    margin-top: 5px;
     border: 1px solid var(--color-borde);
     border-radius: 6px;
-    background: #282828; /* Campo más oscuro que el fondo del form */
+    background: #364e75; /* Campos de texto un poco más claros para distinguirlos */
     color: var(--color-texto);
     font-size: 1em;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
-    border-color: var(--color-acento); /* Borde rojo al enfocar */
+    border-color: var(--color-acento); 
     outline: none;
-    box-shadow: 0 0 5px rgba(229, 9, 20, 0.5);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.6); /* Sombra azul al enfocar */
 }
 
 input[type="submit"] {
-    /* Usamos el mismo estilo que el botón principal para consistencia */
-    background-color: var(--color-acento);
+    background-color: var(--color-acento-secundario);
     color: white;
     padding: 14px 25px;
     border: none;
@@ -183,19 +177,18 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: var(--color-hover);
+    background-color: var(--color-hover-rojo);
     transform: translateY(-1px);
 }
 
 /* --- Estilos específicos de Detalle --- */
 .detalle p {
-    background: var(--color-card);
-    padding: 20px;
-    /* Detalle elegante con borde izquierdo */
-    border-left: 6px solid var(--color-acento); 
-    margin-bottom: 15px;
+    background: var(--color-fondo);
+    padding: 18px;
+    border-left: 4px solid var(--color-acento); 
+    margin-bottom: 12px;
     border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* 📱 Media Queries para Responsividad */
@@ -206,7 +199,7 @@ input[type="submit"]:hover {
     }
     
     ul {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        grid-template-columns: 1fr;
     }
 
     form {
